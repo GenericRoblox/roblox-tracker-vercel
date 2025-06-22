@@ -56,7 +56,7 @@ export default function Home() {
               borderRadius: 4
             }}
           >
-            🔗 Play This Game
+            🔗 Open This Place
           </a>
         </div>
       )}
