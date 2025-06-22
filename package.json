@@ -1,5 +1,5 @@
 {
-  "name": "roblox-tracker",
+  "name": "roblox-tracker-vercel",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
