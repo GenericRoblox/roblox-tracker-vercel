@@ -21,26 +21,46 @@ export default function Home() {
   }
 
   return (
-    <main style={{ padding: 20, fontFamily: "sans-serif" }}>
-      <h1>RBX Activity Tracker</h1>
+    <main style={{ padding: 20, fontFamily: "sans-serif", maxWidth: 700, margin: "0 auto" }}>
+      <h1 style={{ fontSize: "2rem", marginBottom: "1rem" }}>RBX Activity Tracker</h1>
+
       <input
         type="text"
         placeholder="Enter Roblox username"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        style={{ padding: "8px", fontSize: "16px", width: "300px" }}
+        style={{
+          padding: "10px",
+          fontSize: "16px",
+          width: "300px",
+          marginRight: "10px"
+        }}
       />
-      <button onClick={fetchGame} style={{ padding: "8px 16px", marginLeft: 8 }}>
-        Check Game
+      <button onClick={fetchGame} style={{
+        padding: "10px 20px",
+        fontSize: "16px",
+        backgroundColor: "#007bff",
+        color: "#fff",
+        border: "none",
+        borderRadius: "5px",
+        cursor: "pointer"
+      }}>
+        🔍 Find Game
       </button>
 
       {error && <p style={{ color: "red", marginTop: 20 }}>❌ {error}</p>}
 
       {result && (
-        <div style={{ marginTop: 20 }}>
-          <h2>Latest Game Info</h2>
+        <div style={{
+          marginTop: "2rem",
+          padding: "1rem",
+          border: "1px solid #ccc",
+          borderRadius: "8px",
+          backgroundColor: "#f9f9f9"
+        }}>
+          <h2>🎮 Game Info</h2>
           <p><strong>Game Name:</strong> {result.gameName}</p>
-          <p><strong>Description:</strong> {result.gameDescription}</p>
+          <p><strong>Description:</strong> {result.gameDescription || "No description available."}</p>
           <p><strong>Latest Badge:</strong> {result.latestBadge}</p>
           <p><strong>Badge Awarded At:</strong> {new Date(result.badgeAwardedAt).toLocaleString()}</p>
           <a
@@ -51,13 +71,13 @@ export default function Home() {
               display: "inline-block",
               marginTop: 10,
               padding: "10px 20px",
-              backgroundColor: "#007bff",
+              backgroundColor: "#28a745",
               color: "white",
               textDecoration: "none",
               borderRadius: 4
             }}
           >
-            🔗 Play This Game
+            🔗 Go to Game
           </a>
         </div>
       )}
