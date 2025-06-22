@@ -8,12 +8,15 @@ export default function Home() {
   async function fetchGame() {
     setError("");
     setResult(null);
+
     const res = await fetch(`/api/latest-activity?username=${username}`);
     const data = await res.json();
+
     if (!res.ok) {
       setError(data.error || "Unknown error");
       return;
     }
+
     setResult(data);
   }
 
