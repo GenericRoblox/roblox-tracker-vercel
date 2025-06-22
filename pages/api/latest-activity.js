@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing userId or username.' });
     }
 
-    // Search recent badges
+    // Look for recent badge with a valid Place
     let cursor = null;
     let foundBadge = null;
     let attempts = 0;
