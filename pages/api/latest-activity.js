@@ -17,7 +17,6 @@ export default async function handler(req, res) {
           }
         }
       );
-
       userId = userRes.data.data[0]?.id;
       if (!userId) {
         return res.status(404).json({ error: 'Username not found.' });
@@ -63,9 +62,7 @@ export default async function handler(req, res) {
     }
 
     if (!foundBadge) {
-      return res.status(404).json({
-        error: 'No badge tied to a game found.'
-      });
+      return res.status(404).json({ error: 'No badge tied to a game found.' });
     }
 
     const placeId = foundBadge.awarder.id;
