@@ -10,12 +10,11 @@ export default function Home() {
     setResult(null);
 
     const res = await fetch(`/api/latest-activity?username=${username}`);
+    const data = await res.json();
     if (!res.ok) {
-      const data = await res.json();
       setError(data.error || "Unknown error");
       return;
     }
-    const data = await res.json();
     setResult(data);
   }
 
@@ -56,7 +55,7 @@ export default function Home() {
               borderRadius: 4
             }}
           >
-            🔗 Open This Place
+            🔗 Play This Game
           </a>
         </div>
       )}
