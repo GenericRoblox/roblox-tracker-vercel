@@ -1,5 +1,5 @@
 {
-  "name": "roblox-tracker-vercel",
+  "name": "rbxactivity",
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
@@ -7,9 +7,9 @@
     "start": "next start"
   },
   "dependencies": {
-    "axios": "^1.6.0",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "axios": "^1.6.8",
+    "next": "13.5.6",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   }
 }
